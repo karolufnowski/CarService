@@ -1,10 +1,20 @@
 package org.example;
 
 import java.util.List;
+import java.util.Scanner;
 
 public class CarService {
-    public void addCar() {
-
+    public static Car addCar() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter brand:");
+        String carName = scanner.nextLine();
+        System.out.println("Enter model:");
+        String carModel = scanner.nextLine();
+        System.out.println("Enter color");
+        String carColor = scanner.nextLine();
+        System.out.println("Enter year of production:");
+        int carYear = scanner.nextInt();
+        return new Car(carName, carModel, carColor, carYear);
     }
 
     public Car getCar() {
