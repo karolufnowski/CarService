@@ -1,20 +1,12 @@
 package org.example;
 
 import java.util.List;
-import java.util.Scanner;
 
 public class CarService {
-    public static Car addCar() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter brand:");
-        String carName = scanner.nextLine();
-        System.out.println("Enter model:");
-        String carModel = scanner.nextLine();
-        System.out.println("Enter color");
-        String carColor = scanner.nextLine();
-        System.out.println("Enter year of production:");
-        int carYear = scanner.nextInt();
-        return new Car(carName, carModel, carColor, carYear);
+    CarRepository carRepository = new CarRepository();
+    public void addCar(String carName, String carModel, String carColor, int carYear) {
+       Car car = new Car(carName, carModel, carColor, carYear);
+        carRepository.saveCar(car);
     }
 
     public Car getCar() {

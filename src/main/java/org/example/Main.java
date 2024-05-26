@@ -7,17 +7,28 @@ package org.example;
 
 import java.util.Scanner;
 
-public class Main extends CarService {
+public class Main {
     public static void main(String[] args) {
         showWelcomeMenu();
         Scanner scanner = new Scanner(System.in);
         int userChoice = scanner.nextInt();
+        CarService carService = new CarService();
+
 
         while (true) {
             if (userChoice == 0) {
                 break;
             } else if (userChoice == 1) {
-                addCar();
+                System.out.println("Enter brand:");
+                String carName = scanner.nextLine();
+                System.out.println("Enter model:");
+                String carModel = scanner.nextLine();
+                System.out.println("Enter color:");
+                String carColor = scanner.nextLine();
+                System.out.println("Enter year of production:");
+                int carYear = scanner.nextInt();
+                carService.addCar(carName, carModel, carColor, carYear);
+
             }
         }
     }
