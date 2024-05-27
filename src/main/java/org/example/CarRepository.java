@@ -12,12 +12,12 @@ public class CarRepository {
         counter++;
     }
 
-    public Car getCar() {
-        return null;
+    public Car getCar(int carID) {
+        return cars.get(carID);
     }
 
     public Map<Integer, Car> getCars() {
-        return null;
+        return cars;
     }
 
     public void updateCar() {
